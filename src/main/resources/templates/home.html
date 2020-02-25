@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home</title>
+	</head>
+	<body>
+	
+		<h2>Welcome</h2>
+		
+		<h3>Tambah Pilot</h3>
+		<td><a th:href="@{/pilot/add}">Tambah</a></td>
+		
+		<h3>Cari Pilot</h3>
+		<form th:action="@{/pilot/view}" method= "GET">
+			License Number: <br>
+			<input type="text" name = "licenseNumber"/>
+			<button type = "submit"> Cari </button>
+		</form>
+		
+		<h3>Hapus Pilot</h3>
+			<form th:action="@{/pilot/delete}" method= "GET">
+			License Number: <br>
+			<input type="text" name = "licenseNumber"/>
+			<button type = "submit"> Hapus </button>
+		</form>
+		
+		<h3>Hapus Flight</h3>
+			<form th:action="@{/flight/delete}" method= "GET">
+			License Number: <br>
+			<input type="text" name = "flightNumber"/>
+			<button type = "submit"> Hapus </button>
+		</form>
+		
+		
+	</body>
+</html>

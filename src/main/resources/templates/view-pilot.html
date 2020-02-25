@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Add</title>
+	</head>
+	<body>
+		<form>
+		<h2>Data</h2>
+		<h3 th:text="${pilot.licenseNumber}"></h3>
+		<h3 th:text="${pilot.name}"></h3>
+		<h3 th:text="${pilot.flyhour}"></h3>
+		<a th:href="@{'/flight/add/'+ ${pilot.licenseNumber}}">Tambah</a>
+		</form>
+		<form th:action="@{/pilot/update/} + ${pilot.licenseNumber}" method="POST">
+			<button type="submit">Update Pilot</button>
+		</form>
+		
+		
+		
+		<form>
+		<h2>Daftar Flight Untuk Pilot</h2>
+		<div th:each="flight : ${flights}">
+			<p th:text="${flight.getFlightNumber()}+'    '+${flight.getOrigin()}+ ' - '+${flight.getDestination()} + '    '+${flight.getTime()}"></p>
+		</div>
+		</form>
+		
+
+	</body>
+</html>
